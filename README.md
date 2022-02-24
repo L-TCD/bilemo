@@ -17,5 +17,7 @@ docker exec -it www_docker_symfony bash
 
 cd project
 
+composer install
+
 php bin/console doctrine:database:create
 ```
