@@ -17,7 +17,7 @@ use Symfony\Component\Serializer\Exception\NotEncodableValueException;
 class ApiProductController extends AbstractController
 {
     /**
-     * @Route("/api/product", name="api_product_index", methods={"GET"})
+     * @Route("/apitest/product", name="api_product_index", methods={"GET"})
      */
     public function index(ProductRepository $productRepository): Response
     {
@@ -25,7 +25,7 @@ class ApiProductController extends AbstractController
     }
 
     /**
-     * @Route("/api/product", name="api_product_store", methods={"POST"})
+     * @Route("/apitest/product", name="api_product_store", methods={"POST"})
      */
     public function store(Request $request, SerializerInterface $serializer, EntityManagerInterface $em, ValidatorInterface $validator)
     {
