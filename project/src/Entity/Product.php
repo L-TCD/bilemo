@@ -38,7 +38,7 @@ class Product
     private $name;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @ORM\Column(type="text")
      * @Groups("product:read")
      * @Assert\NotBlank
      * @Assert\Length(min=3)
