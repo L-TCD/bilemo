@@ -4,11 +4,19 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ProductRepository;
+use ApiPlatform\Core\Annotation\ApiResource;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ProductRepository::class)
+ * @ApiResource(
+ *      normalizationContext = {"groups" = {"product:read"}},
+ *      paginationItemsPerPage = 4,
+ *      paginationClientItemsPerPage = true,
+ *      maximumItemsPerPage = 4,
+ * )
+ * 
  */
 class Product
 {
@@ -41,9 +49,11 @@ class Product
     /**
      * @ORM\Column(type="float")
      * @Groups("product:read")
-     * @Assert\NotBlank
-     * @Assert\Length(min=0)
-     * @Assert\Length(max=999.99)
+     * @Assert\Range(
+     *      min = 9.99,
+     *      max = 999.99,
+     *      notInRangeMessage = "Price must be between {{ min }} and {{ max }}"
+     * )
      */
     private $price;
 

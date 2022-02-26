@@ -25,27 +25,26 @@ class AppFixtures extends Fixture
             $manager->persist($product);
         }
 
-        for ($c = 0; $c < 3; $c++) {
-            $customer = new Customer();
-            $customer
-                ->setName($faker->safeColorName());
+        // for ($c = 0; $c < 3; $c++) {
+        //     $customer = new Customer();
+        //     $customer
+        //         ->setName($faker->safeColorName());
 
-            // between 0 and 20 users by customer
-			for ($u = 0; $u < (mt_rand(0, 50)); $u++) {
-                $user = new User;
-                $user
-                    ->setEmail($faker->email())
-                    ->setPassword('password')
-                    ->setUsername($faker->userName())
-                    ->setCustomer($customer);
+		// 	for ($u = 0; $u < (mt_rand(0, 50)); $u++) {
+        //         $user = new User;
+        //         $user
+        //             ->setEmail($faker->email())
+        //             ->setPassword('password')
+        //             ->setUsername($faker->userName())
+        //             ->setCustomer($customer);
                 
-                $manager->persist($user);
+        //         $manager->persist($user);
 
-                $customer->addUser($user);
-            }
+        //         $customer->addUser($user);
+        //     }
 
-            $manager->persist($customer);        
-        }
+        //     $manager->persist($customer);        
+        // }
 
         $manager->flush();
     }
