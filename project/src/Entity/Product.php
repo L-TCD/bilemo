@@ -14,7 +14,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *      normalizationContext = {"groups" = {"product:read"}},
  *      paginationItemsPerPage = 4,
  *      paginationClientItemsPerPage = true,
- *      maximumItemsPerPage = 4,
+ *      paginationMaximumItemsPerPage = 4,
  * )
  * 
  */
