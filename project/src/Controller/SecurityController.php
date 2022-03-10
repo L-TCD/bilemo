@@ -14,11 +14,11 @@ class SecurityController extends AbstractController
      */
     public function loginApi()
     {
-        $customer = $this->getUser();
-        return $this->json([
-            'username' => $customer->getUserIdentifier(),
-            'roles' => $customer->getRoles()
-        ]);
+        // $customer = $this->getUser();
+        // return $this->json([
+        //     'username' => $customer->getUserIdentifier(),
+        //     'roles' => $customer->getRoles()
+        // ]);
     }
 
     /**

@@ -30,7 +30,7 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
  *              "controller" = MeController::class,
  *              "read" = false,
  *              "openapi_context" = {
- *                  "security" = {"cookieAuth" = {""}},
+ *                  "security" = {{"bearerAuth" = {""}}},
  *              },
  *          },
  *      },
